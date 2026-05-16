@@ -1,0 +1,45 @@
+---
+import { siteConfig } from "../utils/siteConfig";
+---
+
+<footer class="border-t border-foreground bg-foreground text-background">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-[0.8fr_1.2fr]">
+    <div>
+      <p class="font-sans text-sm font-semibold tracking-[0.14em] text-primary">INTERGEN Contacts</p>
+      <h2 class="mt-4 max-w-md font-sans text-3xl font-semibold leading-tight">Coordinator contact information</h2>
+    </div>
+
+    <address class="grid gap-5 not-italic sm:grid-cols-2">
+      <div class="sm:col-span-2">
+        <p class="mt-3 max-w-xl font-sans text-sm leading-6 text-background/75">{siteConfig.contact.address}</p>
+        <a class="mt-2 inline-block text-sm text-background underline hover:text-primary" href={siteConfig.contact.universityUrl}>
+          {siteConfig.contact.universityLabel}
+        </a>
+      </div>
+      <div>
+        <p class="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-background/55">Email</p>
+        <p class="mt-3 grid gap-2 text-sm">
+        {
+          siteConfig.contact.emails.map((email) => (
+            <a class="text-background underline hover:text-primary" href={`mailto:${email}`}>
+              {email}
+            </a>
+          ))
+        }
+        </p>
+      </div>
+      <div>
+        <p class="font-sans text-xs font-semibold uppercase tracking-[0.14em] text-background/55">Phone</p>
+        <a class="mt-3 inline-block text-sm text-background underline hover:text-primary" href={`tel:${siteConfig.contact.phone}`}>
+          {siteConfig.contact.phone}
+        </a>
+      </div>
+    </address>
+  </div>
+  <div class="border-t border-background/15 px-5 py-4">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 font-sans text-xs text-background/55">
+      <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+      <a href="/" class="text-background/75 underline hover:text-primary">Home</a>
+    </div>
+  </div>
+</footer>

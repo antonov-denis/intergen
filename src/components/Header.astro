@@ -1,0 +1,72 @@
+---
+import SiteLogo from "./SiteLogo.astro";
+import { siteConfig } from "../utils/siteConfig";
+
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const isActive = (href: string) => {
+  const normalizedHref = href.replace(/\/$/, "") || "/";
+  return pathname === normalizedHref;
+};
+---
+
+<header
+  class="sticky top-0 z-30 border-b border-border bg-background/95 font-sans backdrop-blur"
+>
+  <div
+    class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4"
+  >
+    <SiteLogo />
+
+    <nav
+      class="hidden items-center gap-1 md:flex"
+      aria-label="Primary navigation"
+    >
+      {
+        siteConfig.navItems.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+            class:list={[
+              "border-b-2 px-3 py-2 text-sm font-semibold no-underline transition-colors",
+              isActive(item.href)
+                ? "border-primary text-foreground"
+                : "border-transparent text-muted-foreground hover:border-border hover:text-foreground",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <details class="relative md:hidden">
+      <summary
+        class="cursor-pointer list-none border border-border bg-card px-3 py-2 text-sm font-semibold text-foreground"
+      >
+        Menu
+      </summary>
+      <nav
+        class="absolute right-0 z-10 mt-3 w-60 border border-border bg-card p-2 shadow-sm"
+        aria-label="Mobile navigation"
+      >
+        {
+          siteConfig.navItems.map((item) => (
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              class:list={[
+                "block border-l-2 px-3 py-2 text-sm font-medium no-underline",
+                isActive(item.href)
+                  ? "border-primary bg-muted text-foreground"
+                  : "border-transparent text-muted-foreground hover:bg-muted hover:text-foreground",
+              ]}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+  </div>
+</header>

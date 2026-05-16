@@ -1,0 +1,89 @@
+---
+interface ImageItem {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  id: string;
+  images: ImageItem[];
+}
+
+const { id, images } = Astro.props;
+const hasMultipleImages = images.length > 1;
+---
+
+<div class="self-start overflow-hidden border border-border bg-background" data-carousel={id}>
+  <div class="group relative aspect-video max-h-[26rem] overflow-hidden bg-muted">
+    {
+      images.map((image, index) => (
+        <button
+          type="button"
+          data-carousel-slide
+          data-fullscreen-image={image.src}
+          data-fullscreen-alt={image.alt}
+          aria-label="Open image fullscreen"
+          class:list={[
+            "absolute inset-0 h-full w-full transition-opacity duration-300",
+            index === 0 ? "opacity-100" : "pointer-events-none opacity-0",
+          ]}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading="lazy"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </button>
+      ))
+    }
+
+    <div class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-foreground/65 to-transparent p-4 text-background opacity-0 transition-opacity group-hover:opacity-100">
+      <p class="font-sans text-xs font-semibold uppercase tracking-[0.14em]">Click image to view fullscreen</p>
+    </div>
+
+    {
+      hasMultipleImages && (
+        <>
+          <button
+            type="button"
+            class="absolute left-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center border border-background/60 bg-background/85 font-sans text-lg font-semibold text-foreground shadow-sm backdrop-blur hover:bg-primary hover:text-primary-foreground"
+            data-carousel-prev
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="absolute right-3 top-1/2 grid size-10 -translate-y-1/2 place-items-center border border-background/60 bg-background/85 font-sans text-lg font-semibold text-foreground shadow-sm backdrop-blur hover:bg-primary hover:text-primary-foreground"
+            data-carousel-next
+            aria-label="Next image"
+          >
+            ›
+          </button>
+        </>
+      )
+    }
+  </div>
+
+  {
+    hasMultipleImages && (
+      <div class="flex items-center justify-between gap-3 border-t border-border px-4 py-3 font-sans">
+        <div class="flex gap-1.5" aria-hidden="true">
+          {images.map((_, index) => (
+            <span
+              data-carousel-dot
+              class:list={[
+                "h-1.5 w-6 bg-border transition-colors",
+                index === 0 ? "bg-primary" : "",
+              ]}
+            />
+          ))}
+        </div>
+        <p class="text-sm text-muted-foreground" aria-live="polite">
+          <span data-carousel-current>1</span> / {images.length}
+        </p>
+      </div>
+    )
+  }
+</div>

@@ -1,11 +1,128 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroSection from "../components/HeroSection.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../utils/siteConfig";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="INTERGEN | Home" description={siteConfig.description}>
+  <HeroSection />
+
+  <section id="about-section" class="mx-auto max-w-6xl px-5 py-16">
+    <SectionHeading eyebrow="About" title="About INTERGEN Project" />
+
+    <div class="mt-8 max-w-4xl text-xl leading-9 text-foreground">
+      <p>
+        The main purpose of the INTERGEN academic consortium is to support
+        different efforts of many people to preserve the family in a respectful
+        way, using the following example as a visualization of the
+        intergenerational businesses linkages:
+      </p>
+
+      <div class="mt-12 grid gap-6 md:grid-cols-2">
+        <article
+          class="border border-border bg-card shadow-[8px_8px_0_var(--muted)]"
+        >
+          <div class="grid grid-cols-[auto_1fr] border-b border-border">
+            <div
+              class="grid min-h-24 w-20 place-items-center border-r border-border bg-primary font-sans text-sm font-bold text-primary-foreground"
+            >
+              01
+            </div>
+            <div class="px-6 py-5">
+              <p
+                class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primary"
+              >
+                Example 1
+              </p>
+              <p
+                class="mt-2 font-sans text-lg font-semibold leading-tight text-foreground"
+              >
+                Grape, wine, online shop
+              </p>
+            </div>
+          </div>
+          <ol class="divide-y divide-border text-base leading-7">
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Grandparents</span
+              >
+              <span class="text-muted-foreground"
+                >The grandparents produce grape</span
+              >
+            </li>
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Parents</span
+              >
+              <span class="text-muted-foreground"
+                >The parents produce wine (including the grape of their parents)</span
+              >
+            </li>
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Children</span
+              >
+              <span class="text-muted-foreground"
+                >The children create an online shop and they also sell the grape
+                and the wine of their relatives.</span
+              >
+            </li>
+          </ol>
+        </article>
+
+        <article
+          class="border border-border bg-card shadow-[8px_8px_0_var(--muted)]"
+        >
+          <div class="grid grid-cols-[auto_1fr] border-b border-border">
+            <div
+              class="grid min-h-24 w-20 place-items-center border-r border-border bg-foreground font-sans text-sm font-bold text-background"
+            >
+              02
+            </div>
+            <div class="px-6 py-5">
+              <p
+                class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primary"
+              >
+                Example 2
+              </p>
+              <p
+                class="mt-2 font-sans text-lg font-semibold leading-tight text-foreground"
+              >
+                Apples, juice, online shop
+              </p>
+            </div>
+          </div>
+          <ol class="divide-y divide-border text-base leading-7">
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Grandparents</span
+              >
+              <span class="text-muted-foreground"
+                >The grandparents produce apples</span
+              >
+            </li>
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Parents</span
+              >
+              <span class="text-muted-foreground"
+                >The parents produce apple juice (including the fruits of the
+                grandparents)</span
+              >
+            </li>
+            <li class="grid gap-3 px-6 py-5 sm:grid-cols-[7rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >Children</span
+              >
+              <span class="text-muted-foreground"
+                >The children create an online shop and they also sell the
+                apples and the apple juice of their relatives.</span
+              >
+            </li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,256 @@
+---
+import PageHeader from "../components/PageHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="INTERGEN | Project"
+  description="About the INTERGEN project."
+>
+  <PageHeader title="About The Project" />
+
+  <section class="mx-auto max-w-6xl px-5 py-16">
+    <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+      <aside class="lg:sticky lg:top-28 lg:self-start">
+        <div class="border border-border bg-muted p-6">
+          <p
+            class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primary"
+          >
+            Project sections
+          </p>
+          <nav
+            class="mt-5 grid gap-3 font-sans text-sm"
+            aria-label="Project page sections"
+          >
+            <a
+              class="text-foreground underline hover:text-primary"
+              href="#provocation">The provocation behind INTERGEN</a
+            >
+            <a class="text-foreground underline hover:text-primary" href="#aim"
+              >Aim and main tasks</a
+            >
+            <a
+              class="text-foreground underline hover:text-primary"
+              href="#outcomes">Outcomes</a
+            >
+            <a
+              class="text-foreground underline hover:text-primary"
+              href="#financing">Financing</a
+            >
+            <a
+              class="text-foreground underline hover:text-primary"
+              href="#work-packages">Work packages</a
+            >
+          </nav>
+        </div>
+      </aside>
+
+      <div class="space-y-8">
+        <article
+          id="provocation"
+          class="scroll-mt-28 border border-border bg-card"
+        >
+          <div class="border-b border-border px-6 py-5">
+            <h2
+              class="mt-2 text-3xl font-semibold leading-tight text-foreground"
+            >
+              The Provocation Behind INTERGEN
+            </h2>
+          </div>
+
+          <div class="space-y-7 px-6 py-7 leading-7 text-muted-foreground">
+            <p class="max-w-3xl text-lg leading-8">
+              The main purpose of the INTERGEN academic consortium is to support
+              different efforts of many people to preserve the family in a
+              respectful way, using the following example as a visualization of
+              the intergenerational business linkages:
+            </p>
+
+            <div class="grid gap-5 md:grid-cols-2">
+              <section class="border border-border bg-background p-5">
+                <h3 class="font-sans text-sm font-semibold text-foreground">
+                  Example 1
+                </h3>
+                <ul class="mt-4 list-disc space-y-3 pl-5">
+                  <li>The grandparents produce grape</li>
+                  <li>
+                    The parents produce wine (including the grape of their
+                    parents)
+                  </li>
+                  <li>
+                    The children create an on-line shop and they also sell the
+                    grape and the wine of their relatives.
+                  </li>
+                </ul>
+              </section>
+
+              <section class="border border-border bg-background p-5">
+                <h3 class="font-sans text-sm font-semibold text-foreground">
+                  Example 2
+                </h3>
+                <ul class="mt-4 list-disc space-y-3 pl-5">
+                  <li>The grandparents produce apples</li>
+                  <li>
+                    The parents produce apple juice (including the fruits of the
+                    grandparents)
+                  </li>
+                  <li>
+                    The children create an on-line shop and they also sell the
+                    apples and the apple juice of their relatives.
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <div class="border-l-2 border-primary pl-5">
+              <p class="font-sans text-sm font-semibold text-foreground">
+                Originally described in
+              </p>
+              <p class="mt-2">
+                <a
+                  href="http://jei.uni-ruse.bg/Issue-2017/10.%20Pavlov_Sheresheva_Perello.pdf"
+                  class="text-foreground underline hover:text-primary"
+                >
+                  Pavlov, D., Sheresheva, M., Perello, M. (2017). The
+                  Intergenerational Small Family Enterprises as Strategic
+                  Entities for the Future of the European Civilization - A Point
+                  of View // Journal of Entrepreneurship & Innovation, 2017,
+                  issue 9, p.p. 26-38, ISSN 1314-0175.
+                </a>
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article id="aim" class="scroll-mt-28 border border-border bg-card">
+          <div class="border-b border-border px-6 py-5">
+            <h2 class="text-3xl font-semibold leading-tight text-foreground">
+              Aim of the network and main tasks
+            </h2>
+          </div>
+
+          <div class="space-y-7 px-6 py-7 leading-7 text-muted-foreground">
+            <p class="max-w-3xl text-lg leading-8">
+              To study how the neoclassic concept of the intergenerational
+              family businesses could be used as an instrument to manage the
+              entrepreneurial stress.
+            </p>
+
+            <div>
+              <h3 class="font-sans text-sm font-semibold text-foreground">
+                The main tasks of the project are:
+              </h3>
+              <ol
+                class="mt-4 divide-y divide-border border border-border bg-background"
+              >
+                <li class="grid gap-3 px-5 py-4 sm:grid-cols-[3rem_1fr]">
+                  <span class="font-sans text-sm font-semibold text-primary"
+                    >01</span
+                  >
+                  <span
+                    >To study the general attitude of the students for their
+                    career development.</span
+                  >
+                </li>
+                <li class="grid gap-3 px-5 py-4 sm:grid-cols-[3rem_1fr]">
+                  <span class="font-sans text-sm font-semibold text-primary"
+                    >02</span
+                  >
+                  <span
+                    >To study the influence of this new concept on their
+                    entrepreneurial attitudes.</span
+                  >
+                </li>
+                <li class="grid gap-3 px-5 py-4 sm:grid-cols-[3rem_1fr]">
+                  <span class="font-sans text-sm font-semibold text-primary"
+                    >03</span
+                  >
+                  <span
+                    >To study how this new theory could reduce their
+                    entrepreneurial stress.</span
+                  >
+                </li>
+                <li class="grid gap-3 px-5 py-4 sm:grid-cols-[3rem_1fr]">
+                  <span class="font-sans text-sm font-semibold text-primary"
+                    >04</span
+                  >
+                  <span
+                    >To study how this theory could improve their well-being.</span
+                  >
+                </li>
+              </ol>
+            </div>
+          </div>
+        </article>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <article
+            id="outcomes"
+            class="scroll-mt-28 border border-border bg-card px-6 py-6"
+          >
+            <h2 class="text-2xl font-semibold leading-tight text-foreground">
+              Outcomes
+            </h2>
+            <p class="mt-4 leading-7 text-muted-foreground">
+              Improved understanding about the role of the intergenerational
+              family businesses for the student development as entrepreneurs.
+            </p>
+          </article>
+
+          <article
+            id="financing"
+            class="scroll-mt-28 border border-border bg-card px-6 py-6"
+          >
+            <h2 class="text-2xl font-semibold leading-tight text-foreground">
+              Financing
+            </h2>
+            <p class="mt-4 leading-7 text-muted-foreground">
+              The project members (especially under HEInnovate concept of the
+              European Commission it is expected the research to be done with
+              non-public funds, especially from firms).
+            </p>
+          </article>
+        </div>
+
+        <article
+          id="work-packages"
+          class="scroll-mt-28 border border-border bg-card"
+        >
+          <div class="border-b border-border px-6 py-5">
+            <h2 class="text-3xl font-semibold leading-tight text-foreground">
+              Work packages
+            </h2>
+          </div>
+          <ol class="divide-y divide-border leading-7 text-muted-foreground">
+            <li class="grid gap-3 px-6 py-4 sm:grid-cols-[5rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >WP1</span
+              >
+              <span>Management.</span>
+            </li>
+            <li class="grid gap-3 px-6 py-4 sm:grid-cols-[5rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >WP2</span
+              >
+              <span>Implementation of a survey among students.</span>
+            </li>
+            <li class="grid gap-3 px-6 py-4 sm:grid-cols-[5rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >WP3</span
+              >
+              <span>Design of publications with the outcomes.</span>
+            </li>
+            <li class="grid gap-3 px-6 py-4 sm:grid-cols-[5rem_1fr]">
+              <span class="font-sans text-sm font-semibold text-foreground"
+                >WP4</span
+              >
+              <span
+                >Dissemination and sustainable exploitation of the results.</span
+              >
+            </li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import { siteConfig } from "../utils/siteConfig";
+---
+
+<a
+  href="/"
+  class="group inline-flex items-center gap-3 font-sans text-foreground no-underline"
+  aria-label={`${siteConfig.name} home`}
+>
+  <span
+    class="relative grid size-12 place-items-center text-sm font-semibold text-background transition-colors"
+  >
+    <img src="/public/logo.png" alt="INTERGEN LOGO" />
+  </span>
+  <span class="grid leading-none">
+    <span class="text-base font-semibold tracking-[0.12em]">
+      {siteConfig.name}
+    </span>
+    <span
+      class="mt-1 text-[0.68rem] font-medium uppercase tracking-[0.18em] text-muted-foreground"
+    >
+      Research project
+    </span>
+  </span>
+</a>

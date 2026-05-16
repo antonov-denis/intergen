@@ -1,0 +1,89 @@
+---
+import PageHeader from "../components/PageHeader.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const authors = [
+  "Margarita Bakracheva",
+  "Daniel Pavlov",
+  "Aleksandr Gudkov",
+  "Andra Diaconescu",
+  "Andrey Kostov",
+  "Aneta Deneva",
+  "Anisa Kume",
+  "Anna Wójcik-Karpacz",
+  "Denitsa Zagorcheva",
+  "Diana Zhelezova-Mindizova",
+  "Elena Dedkova",
+  "Erila Haska",
+  "Evgeni Stanimirov",
+  "Gabriela Strauti",
+  "Ilie Taucean",
+  "Ivan Jovanović",
+  "Jarosław Karpacz",
+  "Jeanina Ciurea",
+  "Joanna Rudawska",
+  "Larisa Ivascu",
+  "Laura Milos",
+  "Manciu Venera",
+  "Marina Sheresheva",
+  "Matei Tamasila",
+  "Milica Veličković",
+  "Stanka Damyanova",
+  "Suzana Demyen",
+  "Vasilika Kume",
+  "Violeta Blazheva",
+];
+---
+
+<BaseLayout
+  title="INTERGEN | Results"
+  description="Results from the INTERGEN project."
+>
+  <PageHeader title="Results" />
+
+  <section class="mx-auto max-w-6xl px-5 py-16">
+    <article class="grid gap-8 border border-border bg-card p-6 md:grid-cols-[0.75fr_1.25fr] md:p-8">
+      <aside class="border border-border bg-muted p-6">
+        <p class="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-primary">Publication</p>
+        <p class="mt-4 text-5xl font-semibold leading-none text-foreground">2020</p>
+        <p class="mt-4 font-sans text-sm text-muted-foreground">Volume 1</p>
+        <p class="mt-2 font-sans text-sm text-muted-foreground">e-ISBN: 978-954-712-794-4</p>
+      </aside>
+
+      <div>
+        <p class="font-sans text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+          Academic Publisher University of Ruse “Angel Kanchev”
+        </p>
+        <h2 class="mt-4 text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+          The Intergenerational Family Businesses as a Stress Management Instrument for Entrepreneurs
+        </h2>
+
+        <div class="mt-6">
+          <h3 class="font-sans text-sm font-semibold text-foreground">Authors</h3>
+          <p class="mt-3 leading-7 text-muted-foreground">{authors.join(", ")}. (2020).</p>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-3 font-sans">
+          <a
+            href="/INTERGEN-BOOK-1.pdf"
+            class="border border-foreground bg-foreground px-5 py-3 text-sm font-semibold text-background no-underline hover:bg-primary hover:text-primary-foreground"
+          >
+            Open PDF
+          </a>
+          <a
+            href="https://www.researchgate.net/publication/339254824"
+            class="border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground no-underline hover:border-foreground"
+          >
+            ResearchGate
+          </a>
+          <a
+            href="https://www.academia.edu/41973252"
+            class="border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground no-underline hover:border-foreground"
+          >
+            Academia.edu
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+</BaseLayout>
