@@ -1,6 +1,7 @@
 ---
 import PageHeader from "../components/PageHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../utils/paths";
 
 const authors = [
   "Margarita Bakracheva",
@@ -65,7 +66,7 @@ const authors = [
 
         <div class="mt-7 flex flex-wrap gap-3 font-sans">
           <a
-            href="/INTERGEN-BOOK-1.pdf"
+            href={withBase("/INTERGEN-BOOK-1.pdf")}
             class="border border-foreground bg-foreground px-5 py-3 text-sm font-semibold text-background no-underline hover:bg-primary hover:text-primary-foreground"
           >
             Open PDF

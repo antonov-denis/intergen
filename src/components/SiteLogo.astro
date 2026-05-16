@@ -1,16 +1,17 @@
 ---
 import { siteConfig } from "../utils/siteConfig";
+import { withBase } from "../utils/paths";
 ---
 
 <a
-  href="/"
+  href={withBase("/")}
   class="group inline-flex items-center gap-3 font-sans text-foreground no-underline"
   aria-label={`${siteConfig.name} home`}
 >
   <span
     class="relative grid size-12 place-items-center text-sm font-semibold text-background transition-colors"
   >
-    <img src="/public/logo.png" alt="INTERGEN LOGO" />
+    <img src={withBase("/logo.png")} alt="INTERGEN LOGO" />
   </span>
   <span class="grid leading-none">
     <span class="text-base font-semibold tracking-[0.12em]">

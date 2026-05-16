@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../utils/siteConfig";
+import { withBase } from "../utils/paths";
 ---
 
 <footer class="border-t border-foreground bg-foreground text-background">
@@ -39,7 +40,7 @@ import { siteConfig } from "../utils/siteConfig";
   <div class="border-t border-background/15 px-5 py-4">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 font-sans text-xs text-background/55">
       <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-      <a href="/" class="text-background/75 underline hover:text-primary">Home</a>
+      <a href={withBase("/")} class="text-background/75 underline hover:text-primary">Home</a>
     </div>
   </div>
 </footer>

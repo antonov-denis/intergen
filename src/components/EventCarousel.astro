@@ -9,6 +9,8 @@ interface Props {
   images: ImageItem[];
 }
 
+import { withBase } from "../utils/paths";
+
 const { id, images } = Astro.props;
 const hasMultipleImages = images.length > 1;
 ---
@@ -20,7 +22,7 @@ const hasMultipleImages = images.length > 1;
         <button
           type="button"
           data-carousel-slide
-          data-fullscreen-image={image.src}
+          data-fullscreen-image={withBase(image.src)}
           data-fullscreen-alt={image.alt}
           aria-label="Open image fullscreen"
           class:list={[
@@ -29,7 +31,7 @@ const hasMultipleImages = images.length > 1;
           ]}
         >
           <img
-            src={image.src}
+            src={withBase(image.src)}
             alt={image.alt}
             loading="lazy"
             class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
